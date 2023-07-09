@@ -10,12 +10,10 @@ function Header(args) {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center' }}>
-      <Navbar {...args}>
-        <NavbarBrand style={{ fontWeight: 'bold', fontSize: '1.5rem' }}>Speak Easy<span style={{ fontSize: '2rem' }}></span></NavbarBrand>
-      </Navbar>
-    </div>
-  );
+   <div className='Header'>
+<h1> Speak Easy </h1>
+   </div>
+  )
 }
 
 export default Header;

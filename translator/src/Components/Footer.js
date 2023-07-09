@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
 
 const Footer = () => {
   return (
-    <div>Footer</div>
-  )
+    <div className="footer">
+      &copy; 2023 Ross Marketing. All rights reserved.
+
+    </div>
+  );
 }
 
-export default Footer
+export default Footer;

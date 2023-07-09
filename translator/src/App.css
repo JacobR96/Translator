@@ -1,4 +1,10 @@
-.home_page {
+.Header {
+  background-color: #F5F5F5;
+  text-align: center;
+}
+
+
+.home_page{
   background-color: #0079FF;
 }
 .container {
@@ -26,4 +32,46 @@
   .textarea-container {
     grid-template-columns: 1fr;
   }
+}
+div {
+  margin-bottom: 10px;
+}
+
+input {
+  width: 30rem;
+  height: 13rem;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+
+.mainpage_submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: #f1f1f1;
+  text-align: center;
 }
