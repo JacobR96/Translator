@@ -27,6 +27,9 @@ const FlashCardShow = ({ flashcards }) => {
           <NavLink to={"/flashcardindex"} className="nav-link">
             back to main page
           </NavLink>
+          <NavLink to="/flashcardindex">
+  <Button>Delete Flash Card</Button>
+</NavLink>
         </CardBody>
       </Card>
     </main>
