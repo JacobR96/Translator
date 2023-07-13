@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import {
-  Navbar,
-  NavbarBrand
+  NavLink,
 } from 'reactstrap';
 
 function Header(args) {
@@ -10,10 +9,22 @@ function Header(args) {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-   <div className='Header'>
-<h1> Speak Easy </h1>
-   </div>
-  )
+<>
+  
+   
+    <NavLink  href="/" className="nav-link">
+    Speak Easy 
+    </NavLink>
+
+           
+     <NavLink href="/flashcardindex" className="nav-link">
+      Flash Cards
+      </NavLink>
+            
+      
+
+    </>
+  );
 }
 
 export default Header;
