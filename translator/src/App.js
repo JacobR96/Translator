@@ -35,7 +35,7 @@ function App() {
       method: "POST"
     })
       .then((response) => response.json())
-      .then((payload) => readFlashCards()) // Fixed function name
+      .then((payload) => readFlashCards())
       .catch((errors) => console.log("Flash Card create errors:", errors));
   };
 
@@ -48,13 +48,11 @@ function App() {
       method: "PATCH"
     })
       .then((response) => response.json())
-      .then((payload) => readFlashCards()) // Fixed function name
+      .then((payload) => readFlashCards())
       .catch((errors) => console.log("Flash cards update errors:", errors));
   };
 
   const deleteFlashCard = (id) => {
-    console.log("Deleting flash card with ID:", id);
-  
     fetch(`http://localhost:3000/flash_cards/${id}`, {
       headers: {
         "Content-Type": "application/json"
@@ -62,10 +60,7 @@ function App() {
       method: "DELETE"
     })
       .then((response) => response.json())
-      .then((payload) => {
-        console.log("Flash card deleted:", payload);
-        readFlashCards(); // Fixed function name
-      })
+      .then((payload) => readFlashCards())
       .catch((errors) => console.log("Delete errors:", errors));
   };
   
@@ -76,10 +71,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/flashcardindex" element={<FlashCardIndex flashcards={flashcards} />} />
-        <Route path="/flashcardshow/:id" element={<FlashCardShow flashcards={flashcards} />} />
-        <Route path="/flashcardnew" element={<FlashCardNew />} />
-        <Route path="/flashcardedit" element={<FlashCardEdit />} />
-        {/* <Route path="/flashcardshow/:id" element={<FlashCardShow flashcards={flashcards} deleteFlashCard={deleteFlashCard} />} /> */}
+        <Route path="/flashcardshow/:id" element={<FlashCardShow flashcards={flashcards} deleteFlashCard={deleteFlashCard} />} />
+        <Route path="/flashcardnew" element={<FlashCardNew createFlashCard={createFlashCard} />} />
+        <Route path="/flashcardedit/:id" element={<FlashCardEdit flashcards={flashcards} updateFlashCard={updateFlashCard} />} />        
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

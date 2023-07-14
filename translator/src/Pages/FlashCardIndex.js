@@ -1,13 +1,15 @@
 import React from "react";
 import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button } from "reactstrap";
-import { NavLink } from "react-router-dom"
-
+import { NavLink } from "react-router-dom";
 
 const FlashCardIndex = ({ flashcards }) => {
   console.log(flashcards);
 
   return (
     <main className="flashcard-index-cards">
+      <NavLink to="/flashcardnew" className="nav-link">
+        <Button>Create Flash Card</Button>
+      </NavLink>
       {flashcards?.map((flashcard, index) => (
         <Card style={{ width: "14rem" }} key={index}>
           <img
@@ -24,8 +26,8 @@ const FlashCardIndex = ({ flashcards }) => {
               <p>{flashcard.description}</p>
             </CardText>
             <NavLink to={`/flashcardshow/${flashcard.id}`} className="nav-link">
-  See More Details
-</NavLink>
+              See More Details
+            </NavLink>
           </CardBody>
         </Card>
       ))}
