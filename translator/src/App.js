@@ -63,21 +63,22 @@ function App() {
       .then((payload) => readFlashCards())
       .catch((errors) => console.log("Delete errors:", errors));
   };
-  
 
   return (
-    <>
+    <div id="root">
       <Header />
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/flashcardindex" element={<FlashCardIndex flashcards={flashcards} />} />
-        <Route path="/flashcardshow/:id" element={<FlashCardShow flashcards={flashcards} deleteFlashCard={deleteFlashCard} />} />
-        <Route path="/flashcardnew" element={<FlashCardNew createFlashCard={createFlashCard} />} />
-        <Route path="/flashcardedit/:id" element={<FlashCardEdit flashcards={flashcards} updateFlashCard={updateFlashCard} />} />        
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <div className="main-content">
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/flashcardindex" element={<FlashCardIndex flashcards={flashcards} />} />
+          <Route path="/flashcardshow/:id" element={<FlashCardShow flashcards={flashcards} deleteFlashCard={deleteFlashCard} />} />
+          <Route path="/flashcardnew" element={<FlashCardNew createFlashCard={createFlashCard} />} />
+          <Route path="/flashcardedit/:id" element={<FlashCardEdit flashcards={flashcards} updateFlashCard={updateFlashCard} />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </div>
       <Footer />
-    </>
+    </div>
   );
 }
 
