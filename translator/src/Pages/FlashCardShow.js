@@ -17,12 +17,16 @@ const FlashCardShow = ({ flashcards, deleteFlashCard }) => {
   if (!currentFlashCard) {
     return <div>Loading...</div>;
   }
-
+  
   return (
-    <main style={{ width: '80%', margin: '0 auto' }}>
-      <div className="flashcard">
-        <Card style={{ width: '100%' }}>
-          <img alt={currentFlashCard.english} src={currentFlashCard.image} style={{ width: '80%', height: '80%' }} />
+    <main className="show-page">
+      <div className="show-page-card">
+        <Card className="show-page-card-body">
+          <img
+            alt={currentFlashCard.english}
+            src={currentFlashCard.image}
+            className="show-page-image"
+          />
           <CardBody>
             <CardTitle tag="h5">{currentFlashCard.english}</CardTitle>
             <CardSubtitle className="mb-2 text-muted" tag="h6">
@@ -31,14 +35,18 @@ const FlashCardShow = ({ flashcards, deleteFlashCard }) => {
             <CardText>
               <p>{currentFlashCard.description}</p>
             </CardText>
-            <NavLink to="/flashcardindex" className="nav-link">
-              Back to main page
-            </NavLink>
+            <div className="show-page-links">
+              <NavLink to="/flashcardindex" className="show-page-nav-link">
+                Back to main page
+              </NavLink>
+              <div>
+                <NavLink to={`/flashcardedit/${currentFlashCard.id}`} className="show-page-nav-link">
+                  Edit Flash Card
+                </NavLink>
+              </div>
+            </div>
             <Button onClick={handleDelete}>Delete Flash Card</Button>
           </CardBody>
-          <NavLink to={`/flashcardedit/${currentFlashCard.id}`} className="nav-link">
-            Edit Flash Card
-          </NavLink>
         </Card>
       </div>
     </main>

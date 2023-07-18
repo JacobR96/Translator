@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FormGroup, Label, Input, Form, Button } from 'reactstrap';
 import wordBank from '../Components/wordBank';
-
+import spanishWordBank from '../Components/SpanWordBank';
 const Main = () => {
   const [inputValue, setInputValue] = useState('');
   const [outputValue, setOutputValue] = useState('');
@@ -12,8 +12,19 @@ const Main = () => {
 
   const translateToSpanish = () => {
     const toArray = inputValue.split(' ');
-    const results = toArray.map((word) => wordBank[word] || word);
-    const translatedText = results.join(' ');
+    const selectedLanguage = document.getElementById('exampleSelect').value;
+
+    let translatedText;
+    if (selectedLanguage === 'English') {
+      const results = toArray.map((word) => wordBank[word] || word);
+      translatedText = results.join(' ');
+    } else if (selectedLanguage === 'Spanish') {
+      const results = toArray.map((word) => spanishWordBank[word] || word); // Use the Spanish word bank
+      translatedText = results.join(' ');
+    } else {
+      // Handle translations for other languages
+    }
+
     setOutputValue(translatedText);
   };
 

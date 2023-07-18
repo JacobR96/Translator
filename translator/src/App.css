@@ -1,8 +1,7 @@
-/* App.css */
-
 /* Global styles */
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -15,7 +14,7 @@ html, body {
 /* Header styles */
 
 .header {
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   text-align: center;
   margin-bottom: 20px; /* Add margin-bottom to create space */
   display: flex;
@@ -25,14 +24,14 @@ html, body {
 /* Page-specific styles */
 
 .home_page {
-  background-color: #0079FF;
+  background-color: #0079ff;
 }
 
 .container {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #0079FF;
+  background-color: #0079ff;
 }
 
 .title {
@@ -135,11 +134,9 @@ input {
   margin-right: 20px;
 }
 
-
-
 .flashcard {
   width: 14rem;
-  height: 20rem;
+  height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -155,10 +152,60 @@ input {
 
 /* ... */
 
-
 .flashcard.active {
   transform: rotateY(180deg);
 }
 
 /* Card Image styles */
 
+.flashcard img {
+  width: 100%;
+  height: auto;
+  max-height: 200px; /* Adjust the maximum height as desired */
+}
+
+.show-page-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 70%;
+  height: 100%;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 0 auto; /* Add margin:auto to horizontally center the card */
+}
+
+
+.show-page {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.show-page-card-body {
+  width: 60%;
+}
+
+.show-page-image {
+  width: 80%;
+  height: 80%;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.show-page-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.show-page-nav-link {
+  font-size: 26px;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
