@@ -116,13 +116,14 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 10px;
 }
 
 .nav-container {
   display: flex;
   justify-content: space-between;
   width: 400px; /* Adjust the width to match the card width */
-  margin-top: 10px;
+  margin: 10px 0;
 }
 
 .nav-link {
@@ -148,6 +149,8 @@ input {
   border-radius: 8px;
   cursor: pointer;
   margin-top: 10%;
+  margin-bottom: 10px;
+
 }
 
 /* ... */
@@ -207,4 +210,8 @@ input {
   color: black;
   font-weight: bold;
   text-decoration: none;
+}
+
+.nav-button {
+  margin: 0 5px;
 }

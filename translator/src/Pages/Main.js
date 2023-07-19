@@ -1,26 +1,30 @@
 import React, { useState } from 'react';
 import { FormGroup, Label, Input, Form, Button } from 'reactstrap';
-import wordBank from '../Components/wordBank';
-import spanishwordbank from '../Components/spanishBank'
+import wordbank from '../Components/wordBank';
+import spanishwordbank from '../Components/spanishBank';
 
 const Main = () => {
   const [inputValue, setInputValue] = useState('');
   const [outputValue, setOutputValue] = useState('');
+  const [selectedLanguage, setSelectedLanguage] = useState('English');
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
   };
 
-  const translateToSpanish = () => {
+  const handleLanguageChange = (event) => {
+    setSelectedLanguage(event.target.value);
+  };
+
+  const translateText = () => {
     const toArray = inputValue.split(' ');
-    const selectedLanguage = document.getElementById('exampleSelect').value;
 
     let translatedText;
     if (selectedLanguage === 'English') {
-      const results = toArray.map((word) => wordBank[word] || word);
+      const results = toArray.map((word) => wordbank[word] || word);
       translatedText = results.join(' ');
     } else if (selectedLanguage === 'Spanish') {
-      const results = toArray.map((word) => spanishwordbank[word] || word); 
+      const results = toArray.map((word) => spanishwordbank[word] || word);
       translatedText = results.join(' ');
     } else {
       // Handle translations for other languages
@@ -35,9 +39,15 @@ const Main = () => {
       <Form>
         <FormGroup>
           <Label for="exampleSelect">What's your Language</Label>
-          <Input id="exampleSelect" name="select" type="select">
-            <option>English</option>
-            <option>Spanish</option>
+          <Input
+            id="exampleSelect"
+            name="select"
+            type="select"
+            value={selectedLanguage}
+            onChange={handleLanguageChange}
+          >
+            <option value="English">English</option>
+            <option value="Spanish">Spanish</option>
           </Input>
         </FormGroup>
 
@@ -50,16 +60,11 @@ const Main = () => {
           />
         </div>
         <div>
-          <input
-            type="text"
-            value={outputValue}
-            placeholder="Output"
-            readOnly
-          />
+          <input type="text" value={outputValue} placeholder="Output" readOnly />
         </div>
 
         <div className="mainpage_submit">
-          <Button color="primary" onClick={translateToSpanish}>
+          <Button color="primary" onClick={translateText}>
             Submit
           </Button>
         </div>

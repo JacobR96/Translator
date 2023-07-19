@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button } from 'reactstrap';
+import { Card, CardBody, CardText, Button } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 
 const FlashCardIndex = ({ flashcards }) => {
@@ -30,10 +30,6 @@ const FlashCardIndex = ({ flashcards }) => {
               />
             </div>
             <CardBody>
-              {/* <CardTitle tag="h5">{flashcards[currentIndex].english}</CardTitle> */}
-              {/* <CardSubtitle className="mb-2 text-muted" tag="h6">
-                Spanish: {flashcards[currentIndex].spanish}
-              </CardSubtitle> */}
               <CardText>
                 <p>{flashcards[currentIndex].english}</p>
               </CardText>
@@ -48,8 +44,8 @@ const FlashCardIndex = ({ flashcards }) => {
       </div>
 
       <div className="nav-container">
-        <Button onClick={handlePreviousCard}>Previous</Button>
-        <Button onClick={handleNextCard}>Next</Button>
+        <Button className="nav-button" onClick={handlePreviousCard}>Previous</Button>
+        <Button className="nav-button" onClick={handleNextCard}>Next</Button>
       </div>
     </main>
   );
