@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { FormGroup, Label, Input, Form, Button } from 'reactstrap';
 import wordBank from '../Components/wordBank';
-import spanishWordBank from '../Components/SpanWordBank';
+import spanishwordbank from '../Components/spanishBank'
+
 const Main = () => {
   const [inputValue, setInputValue] = useState('');
   const [outputValue, setOutputValue] = useState('');
@@ -19,7 +20,7 @@ const Main = () => {
       const results = toArray.map((word) => wordBank[word] || word);
       translatedText = results.join(' ');
     } else if (selectedLanguage === 'Spanish') {
-      const results = toArray.map((word) => spanishWordBank[word] || word); // Use the Spanish word bank
+      const results = toArray.map((word) => spanishwordbank[word] || word); 
       translatedText = results.join(' ');
     } else {
       // Handle translations for other languages
@@ -37,9 +38,6 @@ const Main = () => {
           <Input id="exampleSelect" name="select" type="select">
             <option>English</option>
             <option>Spanish</option>
-            <option>TBD</option>
-            <option>TBD</option>
-            <option>TBD</option>
           </Input>
         </FormGroup>
 
